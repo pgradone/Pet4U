@@ -4,22 +4,22 @@
 // Ref: code adapted from my Actors Agency project
 // Loop through Animals List
 // define parent cards container of Animals
-const cardGrid = document.querySelector("#animals");
+const cardGrid = document.querySelector('#animals');
 // define mock Card to clone
-const mockCard = cardGrid.querySelector("figure");
+const mockCard = cardGrid.querySelector('figure');
 // define the animal's select block where to append the animals' options
-const animalSelect = document.querySelector("#select-animal");
+const animalSelect = document.querySelector('#select-animal');
 // the element to duplicate is the first option of the select.
-const mockAnimalOption = animalSelect.querySelector("option");
+const mockAnimalOption = animalSelect.querySelector('option');
 // populate the generated cards with the picture and the name of the animal.
 animalsArray.forEach((animal) => {
   // Create a variable "newCard" and append it to the #animals <article>
   const newCard = mockCard.cloneNode(true);
   cardGrid.append(newCard);
   // In this variable, find the <figcaption> and change the text of the html element with the property value "actor.name"
-  newCard.querySelector("figcaption").textContent = animal.name;
+  newCard.querySelector('figcaption').textContent = animal.name;
   // In this newCard, find the img and change its "src" attribute value.
-  newCard.querySelector("img").src = animal.picture;
+  newCard.querySelector('img').src = animal.picture;
   // Add the animal "type" as a class : this step may be useful for the filtering later on.
   newCard.classList.add(animal.type);
   // 6. Remove the class "d-none" to make this duplicated card visible.
@@ -29,61 +29,63 @@ animalsArray.forEach((animal) => {
   animalSelect.append(newAnimalOption);
   newAnimalOption.value = animal.name;
   newAnimalOption.innerHTML = animal.name;
-  newAnimalOption.removeAttribute("id");
+  newAnimalOption.removeAttribute('id');
 });
 mockCard.remove();
 mockAnimalOption.remove;
 
 // test form submission
-document.querySelector("form").addEventListener("submit", function (ev) {
+document.querySelector('form').addEventListener('submit', function (ev) {
   ev.preventDefault;
-  const animalSelected = document.querySelector("#select-animal");
+  const animalSelected = document.querySelector('#select-animal');
   // test for selected animal
   if (animalSelected.value.length == 0) {
-    animalSelected.classList.add("border-alert");
+    animalSelected.classList.add('border-alert');
   }
-  const reasonText = document.querySelector("#reasontxt");
+  const reasonText = document.querySelector('#reasontxt');
   // test for Reason text
   if (reasonText.value.length < 40) {
-    reasonText.classList.add("border-alert");
+    reasonText.classList.add('border-alert');
   }
   // test for email text
-  const emailInput = document.querySelector("#emailinput");
+  const emailInput = document.querySelector('#emailinput');
   if (emailInput.value.length == 0) {
-    emailInput.classList.add("border-alert");
+    emailInput.classList.add('border-alert');
   }
 });
 
 // reset border to normal if field clicked
-const animalSel = document.querySelector("#select-animal");
-animalSel.addEventListener("click", function () {
-  animalSel.classList.remove("border-alert");
+const animalSel = document.querySelector('#select-animal');
+animalSel.addEventListener('click', function () {
+  animalSel.classList.remove('border-alert');
 });
 
 // reset border to normal if field entered after key release
-const reasonTxt = document.querySelector("#reasontxt");
-reasonTxt.addEventListener("keyup", function () {
-  reasonTxt.classList.remove("border-alert");
+const reasonTxt = document.querySelector('#reasontxt');
+reasonTxt.addEventListener('keyup', function () {
+  reasonTxt.classList.remove('border-alert');
 });
 
-const emailInput = document.querySelector("#emailinput");
-emailInput.addEventListener("keyup", function () {
-  emailInput.classList.remove("border-alert");
+const emailInput = document.querySelector('#emailinput');
+emailInput.addEventListener('keyup', function () {
+  emailInput.classList.remove('border-alert');
 });
 
-// // When click on the species buttons,
-// // define all buttons (of class .btn)
-// const btnClass = document.querySelectorAll(".btn");
-// for (const btn of btnClass) {
-//   btn.addEventListener("click", function (evnt) {
-//     // define the selected category
-//     const selectedCat = this.querySelector("input").value;
-//     // you need to show only the correct category
-//     // cardS was already created in point 1?, or do I have to re-create?
-//     cardS.forEach((card) => {
-//       const toggleDisplay = !card.classList.contains(selCat);
-//       card.classList.toggle("d-none", toggleDisplay);
-//     });
-//     formCatSelected.selected = true;
-//   });
-// }
+// When click on the species buttons,
+// define all buttons (of class .btn)
+const btnClass = document.querySelectorAll('species-type');
+for (const btn of btnClass) {
+  btn.addEventListener('click', function (evnt) {
+    // define the selected category
+    const selectedCat = this.querySelector('input').value;
+    // we need to show only the correct species-type
+    // define the animals' card parent container
+    const cardS = document.querySelector('#animals');
+    cardS.forEach((card) => {
+      console.log(d);
+      // const toggleDisplay = !card.classList.contains(selCat);
+      // card.classList.toggle('d-none', toggleDisplay);
+    });
+    formCatSelected.selected = true;
+  });
+}

@@ -175,4 +175,8 @@ iframe {
 .border-alert {
   border-color: red;
 }
+
+.hidden {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

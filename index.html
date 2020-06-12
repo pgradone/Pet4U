@@ -1,158 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet4U - Evaluation</title>
+    <!--Bootstrap link-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coiny&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pet4U - Evaluation</title>
-  <!--Bootstrap link-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- fonts link -->
-  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
-
-<body>
-  <header>
-    <h3>Pet4U</h3>
-    <nav>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#species">Species</a>
-        </li>
-        <li>
-          <a href="#animals">Animals</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Get a pet for your life</h1>
-    <!-- main container for the center card -->
-    <section id="center-card">
-      <h2><img src="images/website/paw_blue.png" alt="" class="paw" />Rehome a pet</h2>
-      <article id="home">
-        <!-- ref: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_carousel&stacked=h -->
-        <div class="container">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="images/species/species-cat.jpg" alt="Cats" style="width:100%;">
+  <body>
+    <header>
+      <h3>Pet4U</h3>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#species">Species</a>
+          </li>
+          <li>
+            <a href="#animals">Animals</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Get a pet for your life</h1>
+      <!-- main container for the center card -->
+      <section id="center-card">
+        <h2>
+          <img src="images/website/paw_blue.png" alt="" class="paw" />Rehome a
+          pet
+        </h2>
+        <article id="home">
+          <!-- ref: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_carousel&stacked=h -->
+          <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#myCarousel"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img
+                    src="images/species/species-cat.jpg"
+                    alt="Cats"
+                    style="width: 100%;"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="images/species/species-dog.jpg"
+                    alt="Dogs"
+                    style="width: 100%;"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="images/species/species-horse.jpg"
+                    alt="Horses"
+                    style="width: 100%;"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="images/species/species-rabbit.jpg"
+                    alt="Horses"
+                    style="width: 100%;"
+                  />
+                </div>
               </div>
-              <div class="item">
-                <img src="images/species/species-dog.jpg" alt="Dogs" style="width:100%;">
-              </div>
-              <div class="item">
-                <img src="images/species/species-horse.jpg" alt="Horses" style="width:100%;">
-              </div>
-              <div class="item">
-                <img src="images/species/species-rabbit.jpg" alt="Horses" style="width:100%;">
-              </div>
+              <!-- Left and right controls -->
+              <a
+                class="left carousel-control"
+                href="#myCarousel"
+                data-slide="prev"
+              >
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="right carousel-control"
+                href="#myCarousel"
+                data-slide="next"
+              >
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
-        </div>
-        <!-- -- end of carousel -->
-        <div class="notice">
-          <p>
-            Established in 1999, Help-A-Pet is a nonprofit organization with a single purpose: to provide financial
-            assistance for the medical care of pets whose owners are unable to afford the expense. Our efforts focus on
-            serving low-income disabled, elderly and working families, nationwide.
-          </p>
-          <p>
-            We find homes for unwanted cats, dogs, small pets and horses across the UK and our tailor-made service means
-            we
-            help each pet find the right person for them.
-          </p>
-          <p>
-            Our tiny staff handles the administrative duties, application review, and communicates with owners and
-            veterinarians to save the lives of pets from low-income families. But, YOU are also a huge part of our
-            organization. The funding that is able to support these pets comes directly from generous and compassionate
-            people like you. We bring the pets to you, and YOU do the magic.
-          </p>
-        </div>
-      </article>
-      <h2><img src="images/website/paw_blue.png" alt="" class="paw" class="paw" />Species</h2>
-      <article id="species">
-        <!-- <div> here serves as container to center the image and the pet name -->
-        <figure>
-          <img src="images/species/species-dog.jpg" alt="dog" class='btn' />
-          <figcaption>Dog</figcaption>
-        </figure>
-        <figure>
-          <img src="images/species/species-cat.jpg" alt="cat" class='btn' />
-          <figcaption>Cat</figcaption>
-        </figure>
-        <figure>
-          <img src="images/species/species-horse.jpg" alt="horse" class='btn' />
-          <figcaption>Horse</figcaption>
-        </figure>
-        <figure>
-          <img src="images/species/species-rabbit.jpg" alt="rabbit" class='btn' />
-          <figcaption>Rabbit</figcaption>
-        </figure>
-      </article>
-      <h2><img src="images/website/paw_blue.png" alt="" class="paw" />Animals</h2>
-      <article id="animals" class='card-columns'>
-        <figure>
-          <img src="images/species/species-dog.jpg" alt="dog" />
-          <figcaption>Dog</figcaption>
-        </figure>
-      </article>
-      <h2><img src="images/website/paw_blue.png" alt="" class="paw" />Contact</h2>
-      <article id="contact">
-        <div id="address-contact">
-          <h3>Address</h3>
-          <p>
-            <span>1 Chemin des Mineurs Oeutranges</span>
-            <span>57100 Thionville</span>
-            <span>03 82 50 31 45</span>
-          </p>
-          <h3>Get contacted</h3>
-          <form action="#">
-            <input id='emailinput' type="email" placeholder="e-mail" class="form-control" />
-            <select name="" id="select-animal" class="custom-select">
-              <option value="">---</option>
-            </select>
-            <input id="reasontxt" type="text" placeholder="Your reason..." class="form-control" />
-            <button type="submit">Send</button>
-          </form>
-        </div>
-        <div id="geo-location">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.3766284288276!2d6.103500551243156!3d49.401782879243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47953066da510a67%3A0x2f1d755f4530048d!2sChemin%20des%20Mineurs%2C%2057100%20Thionville%2C%20France!5e0!3m2!1sen!2slu!4v1590409124165!5m2!1sen!2slu"></iframe>
-        </div>
-      </article>
-    </section>
-  </main>
-  <footer>
-    <p>Copyright left for Ward.</p>
-  </footer>
-  <script src="scripts/datas.js"></script>
-  <script src="scripts/script.js"></script>
-</body>
-
+          <!-- -- end of carousel -->
+          <div class="notice">
+            <p>
+              Established in 1999, Help-A-Pet is a nonprofit organization with a
+              single purpose: to provide financial assistance for the medical
+              care of pets whose owners are unable to afford the expense. Our
+              efforts focus on serving low-income disabled, elderly and working
+              families, nationwide.
+            </p>
+            <p>
+              We find homes for unwanted cats, dogs, small pets and horses
+              across the UK and our tailor-made service means we help each pet
+              find the right person for them.
+            </p>
+            <p>
+              Our tiny staff handles the administrative duties, application
+              review, and communicates with owners and veterinarians to save the
+              lives of pets from low-income families. But, YOU are also a huge
+              part of our organization. The funding that is able to support
+              these pets comes directly from generous and compassionate people
+              like you. We bring the pets to you, and YOU do the magic.
+            </p>
+          </div>
+        </article>
+        <h2>
+          <img
+            src="images/website/paw_blue.png"
+            alt=""
+            class="paw"
+            class="paw"
+          />Species
+        </h2>
+        <article id="species">
+          <!-- <div> here serves as container to center the image and the pet name -->
+          <figure>
+            <img
+              src="images/species/species-dog.jpg"
+              alt="dog"
+              class="species-type"
+            />
+            <figcaption>Dog</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/species/species-cat.jpg"
+              alt="cat"
+              class="species-type"
+            />
+            <figcaption>Cat</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/species/species-horse.jpg"
+              alt="horse"
+              class="species-type"
+            />
+            <figcaption>Horse</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/species/species-rabbit.jpg"
+              alt="rabbit"
+              class="species-type"
+            />
+            <figcaption>Rabbit</figcaption>
+          </figure>
+        </article>
+        <h2>
+          <img src="images/website/paw_blue.png" alt="" class="paw" />Animals
+        </h2>
+        <!-- *********************** Animals' cards ****************-->
+        <article id="animals">
+          <figure>
+            <img
+              src="images/species/species-dog.jpg"
+              alt="dog"
+              class="card-columns"
+            />
+            <figcaption>Dog</figcaption>
+          </figure>
+        </article>
+        <h2>
+          <img src="images/website/paw_blue.png" alt="" class="paw" />Contact
+        </h2>
+        <article id="contact">
+          <div id="address-contact">
+            <h3>Address</h3>
+            <p>
+              <span>1 Chemin des Mineurs Oeutranges</span>
+              <span>57100 Thionville</span>
+              <span>03 82 50 31 45</span>
+            </p>
+            <h3>Get contacted</h3>
+            <form action="">
+              <input
+                id="emailinput"
+                type="email"
+                placeholder="e-mail"
+                class="form-control"
+              />
+              <select name="" id="select-animal" class="custom-select">
+                <option value="">---</option>
+              </select>
+              <input
+                id="reasontxt"
+                type="text"
+                placeholder="Your reason..."
+                class="form-control"
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+          <div id="geo-location">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.3766284288276!2d6.103500551243156!3d49.401782879243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47953066da510a67%3A0x2f1d755f4530048d!2sChemin%20des%20Mineurs%2C%2057100%20Thionville%2C%20France!5e0!3m2!1sen!2slu!4v1590409124165!5m2!1sen!2slu"
+            ></iframe>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright left for Ward.</p>
+    </footer>
+    <script src="scripts/datas.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
