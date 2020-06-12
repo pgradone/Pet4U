@@ -70,3 +70,20 @@ const emailInput = document.querySelector("#emailinput");
 emailInput.addEventListener("keyup", function () {
   emailInput.classList.remove("border-alert");
 });
+
+// // When click on the species buttons,
+// // define all buttons (of class .btn)
+// const btnClass = document.querySelectorAll(".btn");
+// for (const btn of btnClass) {
+//   btn.addEventListener("click", function (evnt) {
+//     // define the selected category
+//     const selectedCat = this.querySelector("input").value;
+//     // you need to show only the correct category
+//     // cardS was already created in point 1?, or do I have to re-create?
+//     cardS.forEach((card) => {
+//       const toggleDisplay = !card.classList.contains(selCat);
+//       card.classList.toggle("d-none", toggleDisplay);
+//     });
+//     formCatSelected.selected = true;
+//   });
+// }
