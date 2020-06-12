@@ -111,6 +111,10 @@ iframe {
   border: solid 2px #1e3799;
 }
 
+.paw {
+  width: 2rem;
+}
+
 #center-card {
   margin: auto;
   width: 70%;
@@ -124,6 +128,12 @@ iframe {
 
 #center-card article, #center-card h2 {
   padding: 10px;
+}
+
+#home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #species {
