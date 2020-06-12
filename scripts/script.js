@@ -39,7 +39,7 @@ document.querySelector("form").addEventListener("submit", function (ev) {
   ev.preventDefault;
   const animalSelected = document.querySelector("#select-animal");
   // test for selected animal
-  if (animalSelected.value === "") {
+  if (animalSelected.value.length == 0) {
     animalSelected.classList.add("border-alert");
   }
   const reasonText = document.querySelector("#reasontxt");
@@ -49,12 +49,13 @@ document.querySelector("form").addEventListener("submit", function (ev) {
   }
 });
 
-const animalSelected = document.querySelector("#select-animal");
-animalSelected.addEventListener("keyup", function () {
-  animalSelected.classList.remove("border-alert");
+const animalSel = document.querySelector("#select-animal");
+animalSel.addEventListener("click", function () {
+  console.log(animalSel.value);
+  animalSel.classList.remove("border-alert");
 });
 
-const reasonText = document.querySelector("#reasontxt");
-reasonText.addEventListener("keyup", function () {
-  reasonText.classList.remove("border-alert");
+const reasonTxt = document.querySelector("#reasontxt");
+reasonTxt.addEventListener("keyup", function () {
+  reasonTxt.classList.remove("border-alert");
 });
