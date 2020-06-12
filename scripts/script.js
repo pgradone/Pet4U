@@ -33,3 +33,28 @@ animalsArray.forEach((animal) => {
 });
 mockCard.remove();
 mockAnimalOption.remove;
+
+// test form submission
+document.querySelector("form").addEventListener("submit", function (ev) {
+  ev.preventDefault;
+  const animalSelected = document.querySelector("#select-animal");
+  // test for selected animal
+  if (animalSelected.value === "") {
+    animalSelected.classList.add("border-alert");
+  }
+  const reasonText = document.querySelector("#reasontxt");
+  // test for Reason text
+  if (reasonText.value.length < 40) {
+    reasonText.classList.add("border-alert");
+  }
+});
+
+const animalSelected = document.querySelector("#select-animal");
+animalSelected.addEventListener("keyup", function () {
+  animalSelected.classList.remove("border-alert");
+});
+
+const reasonText = document.querySelector("#reasontxt");
+reasonText.addEventListener("keyup", function () {
+  reasonText.classList.remove("border-alert");
+});

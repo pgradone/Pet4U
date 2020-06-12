@@ -86,7 +86,7 @@ figure {
 }
 
 h2 > img {
-  width: 5px;
+  width: 3rem;
   color: #6a89cc;
 }
 
@@ -109,10 +109,6 @@ iframe {
   aria-hidden: "false";
   tabindex: "0";
   border: solid 2px #1e3799;
-}
-
-.paw {
-  width: 2rem;
 }
 
 #center-card {
@@ -174,5 +170,9 @@ iframe {
 
 #geo-location {
   width: 50%;
+}
+
+.border-alert {
+  border-color: red;
 }
 /*# sourceMappingURL=style.css.map */
