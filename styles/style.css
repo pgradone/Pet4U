@@ -62,7 +62,7 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #1e3799;
-  background-image: url("../images/houndstooth-pattern.png");
+  background-image: url("../images/website/houndstooth-pattern.png");
   background-size: cover;
 }
 
