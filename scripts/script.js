@@ -47,15 +47,26 @@ document.querySelector("form").addEventListener("submit", function (ev) {
   if (reasonText.value.length < 40) {
     reasonText.classList.add("border-alert");
   }
+  // test for email text
+  const emailInput = document.querySelector("#emailinput");
+  if (emailInput.value.length == 0) {
+    emailInput.classList.add("border-alert");
+  }
 });
 
+// reset border to normal if field clicked
 const animalSel = document.querySelector("#select-animal");
 animalSel.addEventListener("click", function () {
-  console.log(animalSel.value);
   animalSel.classList.remove("border-alert");
 });
 
+// reset border to normal if field entered after key release
 const reasonTxt = document.querySelector("#reasontxt");
 reasonTxt.addEventListener("keyup", function () {
   reasonTxt.classList.remove("border-alert");
+});
+
+const emailInput = document.querySelector("#emailinput");
+emailInput.addEventListener("keyup", function () {
+  emailInput.classList.remove("border-alert");
 });
