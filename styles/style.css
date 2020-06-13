@@ -63,37 +63,11 @@ main {
           flex-direction: column;
   color: #1e3799;
   background-image: url("../images/website/houndstooth-pattern.png");
-  background-size: cover;
-}
-
-figure {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .paw {
   width: 3rem;
   color: #6a89cc;
-}
-
-.paw:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-  color: white;
-}
-
-#species > figure > img {
-  width: 100px;
-  border: 2px solid;
-  border-radius: 50%;
 }
 
 footer {
@@ -120,6 +94,7 @@ iframe {
   -webkit-box-shadow: 10px 10px 5px grey;
           box-shadow: 10px 10px 5px grey;
   padding: 20px;
+  min-width: 600px;
 }
 
 #center-card article, #center-card h2 {
@@ -136,13 +111,34 @@ iframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 10px;
+}
+
+#species > figure > img {
+  width: 100px;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+#species > figure > img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  color: white;
+}
+
+#animals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#animals > figure > img {
+  margin: 5px;
+  width: 200px;
 }
 
 #contact {
