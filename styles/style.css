@@ -94,7 +94,7 @@ iframe {
   -webkit-box-shadow: 10px 10px 5px grey;
           box-shadow: 10px 10px 5px grey;
   padding: 20px;
-  min-width: 600px;
+  min-width: 700px;
 }
 
 #center-card article, #center-card h2 {
@@ -107,13 +107,22 @@ iframe {
   display: flex;
 }
 
+#home .container {
+  width: 40%;
+  margin: 10px;
+}
+
+#home .notice {
+  width: 60%;
+  margin: 10px;
+}
+
 #species {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 10px;
 }
 
 #species > figure > img {
