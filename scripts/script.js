@@ -13,31 +13,40 @@ const animalSelect = document.querySelector('#select-animal');
 const animalOption = animalSelect.querySelector('option');
 // populate the generated cards with the picture and the name of the animal.
 
-function refreshAnimals() {
-  animalsArray.forEach((animal) => {
-    // Create a variable "newCard" and append it to the #animals <article>
-    const newCard = animalFigure.cloneNode(true);
-    animalGrid.append(newCard);
-    // In this variable, find the <figcaption> and change the text of the html element with the property value "actor.name"
-    newCard.querySelector('figcaption').textContent = animal.name;
-    // In this newCard, find the img and change its "src" attribute value.
-    newCard.querySelector('img').src = animal.picture;
-    // Add the animal "type" as a class : this step may be useful for the filtering later on.
-    newCard.classList.add(animal.type);
-    // 6. Remove the class "d-none" to make this duplicated card visible.
-    //   newCard.classList.remove("d-none");
-    // clone the animal option and append it to the <select>
-    const newAnimalOption = animalOption.cloneNode(true);
-    animalSelect.append(newAnimalOption);
-    newAnimalOption.value = animal.name;
-    newAnimalOption.innerHTML = animal.name;
-    newAnimalOption.removeAttribute('id');
-  });
-  animalFigure.remove();
-  animalOption.remove;
+animalsArray.forEach((animal) => {
+  // Create a variable "newCard" and append it to the #animals <article>
+  const newCard = animalFigure.cloneNode(true);
+  animalGrid.append(newCard);
+  // In this variable, find the <figcaption> and change the text of the html element with the property value "actor.name"
+  newCard.querySelector('figcaption').textContent = animal.name;
+  // In this newCard, find the img and change its "src" attribute value.
+  newCard.querySelector('img').src = animal.picture;
+  // Add the animal "type" as a class : this step may be useful for the filtering later on.
+  newCard.classList.add(animal.type);
+  // 6. Remove the class "d-none" to make this duplicated card visible.
+  //   newCard.classList.remove("d-none");
+  // clone the animal option and append it to the <select>
+  const newAnimalOption = animalOption.cloneNode(true);
+  animalSelect.append(newAnimalOption);
+  newAnimalOption.value = animal.name;
+  newAnimalOption.innerHTML = animal.name;
+  newAnimalOption.removeAttribute('id');
+});
+animalFigure.remove();
+animalOption.remove;
+
+// set class visible/invisible following animal type
+function refreshAnimals(animalType) {
+  const cardS = document.querySelectorAll('#animals');
+  for (const card of cardS) {
+    console.log(animalType);
+    const toggleDisplay = card.classList.contains(animalType);
+    // card.classList.toggle('hidden', toggleDisplay);
+    card.classList.remove('hidden');
+  }
 }
 
-refreshAnimals();
+refreshAnimals('');
 
 // test form submission
 const reasonText = document.querySelector('#reasontxt');
