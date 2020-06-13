@@ -66,7 +66,7 @@ main {
   background-size: cover;
 }
 
-figure > img {
+#species > figure > img {
   width: 100px;
   border: 2px solid;
   border-radius: 50%;
