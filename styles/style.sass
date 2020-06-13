@@ -47,23 +47,25 @@ main
   background-image: url('../images/website/houndstooth-pattern.png')
   background-size: cover
 
-// for the animals' images
-#species>figure>img
-  width: 100px
-  border: 2px solid
-  border-radius: 50%
-
 figure
   display: flex
   flex-direction: column
   align-items: center
 
-h2>img
+.paw
   width: 3rem
   color: $secondary_color
   &:hover
     transform: scale(1.3)
     color: white
+
+// for the species' images
+#species>figure>img
+  width: 100px
+  border: 2px solid
+  border-radius: 50%
+
+
 
 footer
   align-items: right

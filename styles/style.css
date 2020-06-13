@@ -66,12 +66,6 @@ main {
   background-size: cover;
 }
 
-#species > figure > img {
-  width: 100px;
-  border: 2px solid;
-  border-radius: 50%;
-}
-
 figure {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,15 +79,21 @@ figure {
           align-items: center;
 }
 
-h2 > img {
+.paw {
   width: 3rem;
   color: #6a89cc;
 }
 
-h2 > img:hover {
+.paw:hover {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
   color: white;
+}
+
+#species > figure > img {
+  width: 100px;
+  border: 2px solid;
+  border-radius: 50%;
 }
 
 footer {
