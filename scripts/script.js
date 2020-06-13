@@ -55,18 +55,15 @@ document.querySelector('form').addEventListener('submit', function (ev) {
 });
 
 // reset border to normal if field clicked
-const animalSel = document.querySelector('#select-animal');
-animalSel.addEventListener('click', function () {
-  animalSel.classList.remove('border-alert');
+animalSelect.addEventListener('click', function () {
+  animalSelect.classList.remove('border-alert');
 });
 
 // reset border to normal if field entered after key release
-const reasonTxt = document.querySelector('#reasontxt');
-reasonTxt.addEventListener('keyup', function () {
-  reasonTxt.classList.remove('border-alert');
+reasonText.addEventListener('keyup', function () {
+  reasonText.classList.remove('border-alert');
 });
 
-const emailInput = document.querySelector('#emailinput');
 emailInput.addEventListener('keyup', function () {
   emailInput.classList.remove('border-alert');
 });
