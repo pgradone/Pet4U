@@ -4,18 +4,18 @@
 // Ref: code adapted from my Actors Agency project
 // Loop through Animals List
 // define parent cards container of Animals
-const cardGrid = document.querySelector('#animals');
+const animalGrid = document.querySelector('#animals');
 // define mock Card to clone
-const mockCard = cardGrid.querySelector('figure');
+const animalFigure = animalGrid.querySelector('figure');
 // define the animal's select block where to append the animals' options
 const animalSelect = document.querySelector('#select-animal');
 // the element to duplicate is the first option of the select.
-const mockAnimalOption = animalSelect.querySelector('option');
+const animalOption = animalSelect.querySelector('option');
 // populate the generated cards with the picture and the name of the animal.
 animalsArray.forEach((animal) => {
   // Create a variable "newCard" and append it to the #animals <article>
-  const newCard = mockCard.cloneNode(true);
-  cardGrid.append(newCard);
+  const newCard = animalFigure.cloneNode(true);
+  animalGrid.append(newCard);
   // In this variable, find the <figcaption> and change the text of the html element with the property value "actor.name"
   newCard.querySelector('figcaption').textContent = animal.name;
   // In this newCard, find the img and change its "src" attribute value.
@@ -25,30 +25,30 @@ animalsArray.forEach((animal) => {
   // 6. Remove the class "d-none" to make this duplicated card visible.
   //   newCard.classList.remove("d-none");
   // clone the animal option and append it to the <select>
-  const newAnimalOption = mockAnimalOption.cloneNode(true);
+  const newAnimalOption = animalOption.cloneNode(true);
   animalSelect.append(newAnimalOption);
   newAnimalOption.value = animal.name;
   newAnimalOption.innerHTML = animal.name;
   newAnimalOption.removeAttribute('id');
 });
-mockCard.remove();
-mockAnimalOption.remove;
+animalFigure.remove();
+animalOption.remove;
 
 // test form submission
+const reasonText = document.querySelector('#reasontxt');
+const emailInput = document.querySelector('#emailinput');
 document.querySelector('form').addEventListener('submit', function (ev) {
   ev.preventDefault;
-  const animalSelected = document.querySelector('#select-animal');
+  // const animalSelected = document.querySelector('#select-animal');
   // test for selected animal
-  if (animalSelected.value.length == 0) {
-    animalSelected.classList.add('border-alert');
+  if (animalSelect.value.length == 0) {
+    animalSelect.classList.add('border-alert');
   }
-  const reasonText = document.querySelector('#reasontxt');
   // test for Reason text
   if (reasonText.value.length < 40) {
     reasonText.classList.add('border-alert');
   }
   // test for email text
-  const emailInput = document.querySelector('#emailinput');
   if (emailInput.value.length == 0) {
     emailInput.classList.add('border-alert');
   }
