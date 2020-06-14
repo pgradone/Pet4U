@@ -2,7 +2,6 @@
 
 // generate a “card columns” layout <-- refer to <figure> tag inside the #animals
 // Ref: code adapted from my Actors Agency project
-// Loop through Animals List
 // define parent cards container of Animals
 const animalGrid = document.querySelector('#animals');
 // define mock Card to clone
@@ -11,8 +10,10 @@ const animalFigure = animalGrid.querySelector('figure');
 const animalSelect = document.querySelector('#select-animal');
 // the element to duplicate is the first option of the select.
 const animalOption = animalSelect.querySelector('option');
-// populate the generated cards with the picture and the name of the animal.
 
+// Loop through Animals List
+// populate the cards with the picture and the name of the animal.
+// also populate the options in the form's <select><option>s
 animalsArray.forEach((animal) => {
   // Create a variable "newCard" and append it to the #animals <article>
   const newCard = animalFigure.cloneNode(true);
@@ -26,34 +27,34 @@ animalsArray.forEach((animal) => {
   // 6. Remove the class "d-none" to make this duplicated card visible.
   //   newCard.classList.remove("d-none");
   // clone the animal option and append it to the <select>
-  const newAnimalOption = animalOption.cloneNode(true);
-  animalSelect.append(newAnimalOption);
-  newAnimalOption.value = animal.name;
-  newAnimalOption.innerHTML = animal.name;
-  newAnimalOption.removeAttribute('id');
+  const newOption = animalOption.cloneNode(true);
+  animalSelect.append(newOption);
+  newOption.value = animal.name;
+  newOption.innerHTML = animal.name;
+  newOption.removeAttribute('id');
 });
 animalFigure.remove();
 animalOption.remove;
 
-// set class visible/invisible following animal type
+// function to set class visible/invisible following animal type
 const cardS = animalGrid.querySelectorAll('figure');
+const optionS = animalSelect.querySelectorAll('option');
 function refreshAnimals(animalType) {
   for (const card of cardS) {
-    const toggleDisplay = !card.classList.contains(animalType);
-    console.log(card.classList, toggleDisplay);
-    card.classList.toggle('hidden', toggleDisplay);
-    // card.classList.remove('hidden');
+    const toggleCard = !card.classList.contains(animalType) && animalType;
+    card.classList.toggle('hidden', toggleCard);
   }
+  optionS.forEach((option) => {
+    const toggleOption = !option.classList.contains(animalType) && animalType;
+    option.classList.toggle('hidden', toggleOption);
+  });
 }
-
-refreshAnimals('dog');
 
 // test form submission
 const reasonText = document.querySelector('#reasontxt');
 const emailInput = document.querySelector('#emailinput');
 document.querySelector('form').addEventListener('submit', function (ev) {
   ev.preventDefault;
-  // const animalSelected = document.querySelector('#select-animal');
   // test for selected animal
   if (animalSelect.value.length == 0) {
     animalSelect.classList.add('border-alert');
@@ -68,35 +69,29 @@ document.querySelector('form').addEventListener('submit', function (ev) {
   }
 });
 
-// reset border to normal if field clicked
+// reset animal selector border to normal if field clicked
 animalSelect.addEventListener('click', function () {
   animalSelect.classList.remove('border-alert');
 });
-
-// reset border to normal if field entered after key release
+// reset reason and email text border to normal if field entered after key release
 reasonText.addEventListener('keyup', function () {
   reasonText.classList.remove('border-alert');
 });
-
 emailInput.addEventListener('keyup', function () {
   emailInput.classList.remove('border-alert');
 });
 
 // When click on the species buttons,
 // define all buttons (of class .btn)
-const btnClass = document.querySelectorAll('species-type');
+const btnClass = document.querySelector('#species').querySelectorAll('figure');
 for (const btn of btnClass) {
-  btn.addEventListener('click', function (evnt) {
+  btn.addEventListener('click', function () {
     // define the selected category
-    const selectedCat = this.querySelector('input').value;
-    // we need to show only the correct species-type
-    // define the animals' card parent container
-    const cardS = document.querySelector('#animals');
-    cardS.forEach((card) => {
-      console.log(d);
-      // const toggleDisplay = !card.classList.contains(selCat);
-      // card.classList.toggle('d-none', toggleDisplay);
-    });
-    formCatSelected.selected = true;
+    const selectedType = btn.querySelector('img').alt;
+    console.log(selectedType);
+    // show only the selected species type
+    refreshAnimals(selectedType);
   });
 }
+
+refreshAnimals('');
