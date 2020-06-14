@@ -10,7 +10,6 @@ const animalFigure = animalGrid.querySelector('figure');
 const animalSelect = document.querySelector('#select-animal');
 // the element to duplicate is the first option of the select.
 const animalOption = animalSelect.querySelector('option');
-
 // Loop through Animals List
 // populate the cards with the picture and the name of the animal.
 // also populate the options in the form's <select><option>s
@@ -20,6 +19,7 @@ animalsArray.forEach((animal) => {
   animalGrid.append(newCard);
   // In this variable, find the <figcaption> and change the text of the html element with the property value "animal.name"
   newCard.querySelector('figcaption').textContent = animal.name;
+  newCard.querySelector('img').alt = animal.name;
   // In this newCard, find the img and change its "src" attribute value.
   newCard.querySelector('img').src = animal.picture;
   // Add the animal "type" as a class : this step may be useful for the filtering later on.
@@ -33,18 +33,20 @@ animalsArray.forEach((animal) => {
   newOption.removeAttribute('id');
 });
 animalFigure.remove();
-animalOption.remove;
+// animalOption.remove();
 
-// function to set class visible/invisible following animal type
+// function to set class visible/invisible following clicked/unclicked animal type
 const cardS = animalGrid.querySelectorAll('figure');
 const optionS = animalSelect.querySelectorAll('option');
-function refreshAnimals(animalType) {
+function refreshAnimals() {
   for (const card of cardS) {
-    const toggleCard = !card.classList.contains(animalType) && animalType;
+    card.classList.remove('hidden');
+    const toggleCard = !speciesFilter.includes(card.classList.value);
     card.classList.toggle('hidden', toggleCard);
   }
   optionS.forEach((option) => {
-    const toggleOption = !option.classList.contains(animalType) && animalType;
+    option.classList.remove('hidden');
+    const toggleOption = !speciesFilter.includes(option.classList.value);
     option.classList.toggle('hidden', toggleOption);
   });
 }
@@ -92,7 +94,7 @@ for (const btn of speciesBtnS) {
     // show only the selected species type
     btn.querySelector('figcaption').classList.toggle('button-bold');
     speciesFilter = getFilterArray();
-    refreshAnimals(selectedType);
+    refreshAnimals();
   });
 }
 
@@ -111,4 +113,4 @@ function getFilterArray() {
 
 let speciesFilter = getFilterArray();
 
-refreshAnimals('');
+refreshAnimals();

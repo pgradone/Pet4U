@@ -195,5 +195,6 @@ iframe {
 .button-bold {
   font-weight: bold;
   color: #1e3799;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
