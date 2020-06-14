@@ -31,6 +31,7 @@ animalsArray.forEach((animal) => {
   animalSelect.append(newOption);
   newOption.value = animal.name;
   newOption.innerHTML = animal.name;
+  newOption.classList.add(animal.type);
   newOption.removeAttribute('id');
 });
 animalFigure.remove();
