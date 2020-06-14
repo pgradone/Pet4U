@@ -100,17 +100,15 @@ for (const btn of speciesBtnS) {
 
 // create species filter as an array
 function getFilterArray() {
+  let filterArray = [];
   speciesBtnS.forEach((btn) => {
-    let filterArray = [];
     const selectedType = btn.querySelector('img').alt;
     const isBold = btn
       .querySelector('figcaption')
       .classList.contains('button-bold');
     filterArray.push(isBold ? selectedType : '');
-    console.log(selectedType, isBold, filterArray);
-
-    return filterArray;
   });
+  return filterArray;
 }
 
 let speciesFilter = getFilterArray();
