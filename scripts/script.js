@@ -84,14 +84,35 @@ emailInput.addEventListener('keyup', function () {
 
 // When click on the species buttons,
 // define all buttons (of class .btn)
-const btnClass = document.querySelector('#species').querySelectorAll('figure');
-for (const btn of btnClass) {
+const speciesBtnS = document
+  .querySelector('#species')
+  .querySelectorAll('figure');
+for (const btn of speciesBtnS) {
   btn.addEventListener('click', function () {
     // define and show only the selected category
     const selectedType = btn.querySelector('img').alt;
     // show only the selected species type
+    btn.querySelector('figcaption').classList.toggle('button-bold');
+    let speciesFilter = getFilterArray();
     refreshAnimals(selectedType);
   });
 }
+
+// create species filter as an array
+function getFilterArray() {
+  speciesBtnS.forEach((btn) => {
+    let filterArray = [];
+    const selectedType = btn.querySelector('img').alt;
+    const isBold = btn
+      .querySelector('figcaption')
+      .classList.contains('button-bold');
+    filterArray.push(isBold ? selectedType : '');
+    console.log(selectedType, isBold, filterArray);
+
+    return filterArray;
+  });
+}
+
+let speciesFilter = getFilterArray();
 
 refreshAnimals('');
