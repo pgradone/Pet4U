@@ -87,9 +87,8 @@ emailInput.addEventListener('keyup', function () {
 const btnClass = document.querySelector('#species').querySelectorAll('figure');
 for (const btn of btnClass) {
   btn.addEventListener('click', function () {
-    // define the selected category
+    // define and show only the selected category
     const selectedType = btn.querySelector('img').alt;
-    console.log(selectedType);
     // show only the selected species type
     refreshAnimals(selectedType);
   });
