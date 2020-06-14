@@ -18,15 +18,13 @@ animalsArray.forEach((animal) => {
   // Create a variable "newCard" and append it to the #animals <article>
   const newCard = animalFigure.cloneNode(true);
   animalGrid.append(newCard);
-  // In this variable, find the <figcaption> and change the text of the html element with the property value "actor.name"
+  // In this variable, find the <figcaption> and change the text of the html element with the property value "animal.name"
   newCard.querySelector('figcaption').textContent = animal.name;
   // In this newCard, find the img and change its "src" attribute value.
   newCard.querySelector('img').src = animal.picture;
   // Add the animal "type" as a class : this step may be useful for the filtering later on.
   newCard.classList.add(animal.type);
-  // 6. Remove the class "d-none" to make this duplicated card visible.
-  //   newCard.classList.remove("d-none");
-  // clone the animal option and append it to the <select>
+  // clone the animal option, append it to the <select> and modify its property
   const newOption = animalOption.cloneNode(true);
   animalSelect.append(newOption);
   newOption.value = animal.name;
@@ -51,7 +49,7 @@ function refreshAnimals(animalType) {
   });
 }
 
-// test form submission
+// test the form submission
 const reasonText = document.querySelector('#reasontxt');
 const emailInput = document.querySelector('#emailinput');
 document.querySelector('form').addEventListener('submit', function (ev) {
@@ -93,7 +91,7 @@ for (const btn of speciesBtnS) {
     const selectedType = btn.querySelector('img').alt;
     // show only the selected species type
     btn.querySelector('figcaption').classList.toggle('button-bold');
-    let speciesFilter = getFilterArray();
+    speciesFilter = getFilterArray();
     refreshAnimals(selectedType);
   });
 }
