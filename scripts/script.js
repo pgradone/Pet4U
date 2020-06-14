@@ -36,17 +36,17 @@ animalFigure.remove();
 animalOption.remove;
 
 // set class visible/invisible following animal type
+const cardS = animalGrid.querySelectorAll('figure');
 function refreshAnimals(animalType) {
-  const cardS = document.querySelectorAll('#animals');
   for (const card of cardS) {
-    console.log(animalType);
-    const toggleDisplay = card.classList.contains(animalType);
-    // card.classList.toggle('hidden', toggleDisplay);
-    card.classList.remove('hidden');
+    const toggleDisplay = !card.classList.contains(animalType);
+    console.log(card.classList, toggleDisplay);
+    card.classList.toggle('hidden', toggleDisplay);
+    // card.classList.remove('hidden');
   }
 }
 
-refreshAnimals('');
+refreshAnimals('dog');
 
 // test form submission
 const reasonText = document.querySelector('#reasontxt');

@@ -1,0 +1,20 @@
+article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+h2 > img {
+  height: 1.5rem;
+  color: blue;
+}
+/*# sourceMappingURL=style_animals.css.map */
