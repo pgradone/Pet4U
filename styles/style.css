@@ -83,6 +83,18 @@ iframe {
   border: solid 2px #1e3799;
 }
 
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
 #center-card {
   margin: auto;
   margin-bottom: 20px;
@@ -196,5 +208,9 @@ iframe {
   font-weight: bold;
   color: #1e3799;
   text-transform: uppercase;
+}
+
+#reasontxt {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
